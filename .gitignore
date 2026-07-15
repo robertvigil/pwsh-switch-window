@@ -1,0 +1,9 @@
+# Claude Code local files -- not part of the shipped tool
+.claude/
+CLAUDE.md
+
+# Linux-side help generator + Python artifacts (the .ps1 stays turnkey on Windows)
+tools/
+__pycache__/
+*.pyc
+.venv/
