@@ -6,9 +6,7 @@ It's a single paste-in PowerShell 7 script — no install, nothing to build.
 
 **Runs detached:** call `Switch-Window` once and it launches a hidden background process. From then on, **`Ctrl+Alt+W`** pops the switcher up over whatever you're doing; pick a window and it hides again, ready for next time. Your PowerShell prompt stays free the whole time.
 
-![Switch-Window screenshot](screenshots/screenshot.png)
-
-![Switch-Window screenshot](screenshots/screenshot2.png)
+![screenshot](screenshots/screenshot.png)
 
 ## Load it
 

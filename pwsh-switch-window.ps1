@@ -354,6 +354,31 @@ public class HotForm : Form {
                     & $refilter
                 }
             }
+            '!demo' {
+                # Maintainer helper (undocumented -- not in README/!help): load fake
+                # windows for a clean screenshot. Stops the live refresh so the mock
+                # isn't overwritten on the next 2 s tick; re-summon (hotkey) restores
+                # the real window list.
+                $liveTimer.Stop()
+                $script:all = @(
+                    [pscustomobject]@{ Handle = [IntPtr]1001; App = 'Code';            Title = 'pwsh-switch-window.ps1 - pwsh-switch-window - Visual Studio Code'; Label = 'edit' }
+                    [pscustomobject]@{ Handle = [IntPtr]1002; App = 'Code';            Title = 'README.md - pwsh-switch-window - Visual Studio Code';             Label = 'edit' }
+                    [pscustomobject]@{ Handle = [IntPtr]1003; App = 'Code';            Title = 'pwsh-search-files.ps1 - pwsh-search-files - Visual Studio Code';  Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1004; App = 'chrome';          Title = 'robertvigil/pwsh-switch-window - Google Chrome';                 Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1005; App = 'chrome';          Title = 'Stack Overflow - Where Developers Learn - Google Chrome';        Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1006; App = 'chrome';          Title = 'Microsoft Azure - Portal - Google Chrome';                       Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1007; App = 'WindowsTerminal'; Title = 'pwsh';                                                          Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1008; App = 'WindowsTerminal'; Title = 'pwsh - build';                                                  Label = 'build' }
+                    [pscustomobject]@{ Handle = [IntPtr]1009; App = 'OUTLOOK';         Title = 'Inbox - you@example.com - Outlook';                              Label = 'mail' }
+                    [pscustomobject]@{ Handle = [IntPtr]1010; App = 'EXCEL';           Title = 'Q4-Budget.xlsx - Excel';                                        Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1011; App = 'WINWORD';         Title = 'Weekly-Status.docx - Word';                                     Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1012; App = 'Teams';           Title = 'General (Engineering) | Microsoft Teams';                        Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1013; App = 'explorer';        Title = 'Projects';                                                      Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1014; App = 'explorer';        Title = 'Downloads';                                                     Label = $null }
+                    [pscustomobject]@{ Handle = [IntPtr]1015; App = 'notepad';         Title = 'kickoff-meeting-notes.txt - Notepad';                            Label = $null }
+                )
+                & $refilter
+            }
             '!quit' {
                 # End the message loop -- Application.Run() returns and the
                 # try/finally releases the hotkey before the process exits.
