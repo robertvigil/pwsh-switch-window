@@ -387,7 +387,7 @@ public class HotForm : Form {
             '!help' {
                 # Open the online README (rendered) in the default browser.
                 try {
-                    Start-Process 'https://github.com/robertvigil/pwsh-switch-window#readme'
+                    Start-Process 'https://github.com/robertvigil/pwsh-switch-window#cheatsheet'
                 } catch {
                     & $tell "Couldn't open help:  $($_.Exception.Message)" 'Warning'
                 }

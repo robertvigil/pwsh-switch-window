@@ -8,6 +8,19 @@ It's a single paste-in PowerShell 7 script — no install, nothing to build.
 
 ![screenshot](screenshots/screenshot.png)
 
+## Cheatsheet
+
+| Key | Action |
+|---|---|
+| **Ctrl+Alt+W** | Summon the switcher |
+| Type | Filter on app name + window title + label |
+| **Up / Down** | Move the selection |
+| **Enter** / double-click | Switch to that window (switcher hides) |
+| **F5** | Refresh the list |
+| **Esc** | Dismiss without switching |
+
+**Commands** (type in the box, then Enter): `!aot` · `!hotkey <combo>` · `!label <text>` · `!quit` · `!help`
+
 ## Load it
 
 PowerShell 7 (`pwsh`) only. Copy **`pwsh-switch-window.ps1`** in full, then at the prompt run — once per session:
@@ -43,7 +56,7 @@ Type a command in the search box starting with `!`, then press Enter. The list f
 - **`!hotkey <combo>`** — change the global hotkey, e.g. `!hotkey Ctrl+Alt+Q`, `!hotkey Win+Space`, `!hotkey Shift+F12`. Modifiers `Ctrl`, `Alt`, `Shift`, `Win`; keys A–Z, 0–9, F1–F12, plus `Space`, `Tab`, `Escape`, `Enter`. The new combo takes effect immediately and is remembered between runs. `!hotkey` alone shows the current binding. Unparseable input or a combo that's already claimed leaves the current hotkey in place and reports the error in a dialog.
 - **`!label <text>`** — name the selected window. Labelled windows show a green `[text]` tag and float to the top of their app group. **The label is also matched by the search box** — so labelling all of a project's windows with `my project` lets you filter the list to just that project by typing the label. Labels persist per-user in the Windows registry, so they survive restarts. `!label` alone clears the label.
 - **`!quit`** — stop the background switcher (cleaner than hunting down the PID and `Stop-Process`-ing it).
-- **`!help`** — open this README (on GitHub) in your browser.
+- **`!help`** — open the [Cheatsheet](#cheatsheet) (this README, on GitHub) in your browser.
 
 Stop the background switcher when you're done:
 
