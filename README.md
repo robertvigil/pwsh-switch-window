@@ -23,13 +23,23 @@ It's a single paste-in PowerShell 7 script — no install, nothing to build.
 
 ## Load it
 
-PowerShell 7 (`pwsh`) only. Copy **`pwsh-switch-window.ps1`** in full, then at the prompt run — once per session:
+PowerShell 7 (`pwsh`) only. Load it straight from GitHub — once per session:
 
 ```powershell
-Invoke-Expression (Get-Clipboard -Raw)
+irm https://raw.githubusercontent.com/robertvigil/pwsh-switch-window/main/pwsh-switch-window.ps1 | iex
 ```
 
 That defines `Switch-Window`; nothing runs yet.
+
+### Locked-down / offline machines
+
+If `.ps1` execution is blocked by policy, or the machine can't reach GitHub, copy **`pwsh-switch-window.ps1`** in full and paste-load it instead — a pasted string isn't an executed script file, so it sidesteps the policy:
+
+```powershell
+iex (Get-Clipboard -Raw)
+```
+
+(This is the original workflow these tools were built for; loading from GitHub is just the convenient path when it's available.)
 
 ## Use it
 
